@@ -16,7 +16,12 @@ public class OTPController {
 
     @GetMapping("/generate")
     public ResponseEntity<String> generateOTP(@RequestParam String email){
-        String generateOTP = otpService.generateOTP(email);
-        return ResponseEntity.ok("OTP : Generated"+ generateOTP);
+        otpService.generateOTP(email);
+        return ResponseEntity.ok("OTP Generated");
+    }
+
+    @GetMapping("/validate")
+    public ResponseEntity<String> generateOTP(@RequestParam String email, @RequestParam String otp){
+        return ResponseEntity.ok(otpService.validateOtp(email, otp));
     }
 }

@@ -1,6 +1,5 @@
 package com.example.springboot;
 
-import java.time.LocalDateTime;
 
 public class OTP {
     private Long id;
